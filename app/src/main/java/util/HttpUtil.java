@@ -1,5 +1,7 @@
 package util;
 
+import android.util.Log;
+
 import java.io.BufferedReader;
 import java.io.InputStream;
 import java.io.InputStreamReader;
@@ -29,6 +31,7 @@ public class HttpUtil {
                         response.append(line);
                     }
                     if(listener!=null){
+                        Log.d("MSG",response.toString());
                         listener.onFinish(response.toString());
                     }
                 }catch (Exception e){
